@@ -4,12 +4,13 @@
   "description": "1. Node.js 2. MongoDB 3. ExpressJS 4. dotenv 5. Mongoose 6. Docker 7. HTML 8. CSS 9. JavaScript ### Scope of Project: This project is a CRUD REST API web service for managing departments and their respective employees at a Dental Office.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "devStart": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
+    "mongodb": "^6.1.0",
     "mongoose": "^7.5.2"
   },
   "devDependencies": {
