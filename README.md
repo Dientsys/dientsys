@@ -1,9 +1,9 @@
 # CRUD Employee Management Web App
 ## Author: Erik Sandoval
 ### Technologies Used:
-1. Node.js
+1. Node
 2. MongoDB
-3. ExpressJS
+3. Express
 4. dotenv
 5. Mongoose
 6. Docker
