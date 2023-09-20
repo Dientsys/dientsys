@@ -20,5 +20,5 @@ const departmentsRouter = require('./routes/departments')
 app.use('/departments', departmentsRouter) // Use departmentsRouter for all routes starting with /departments
 
 
-// Listen on port 3000
-app.listen(3000, () => console.log('Server running...'))
+// Listen on port 8000
+app.listen(process.env.PORT, () => console.log('Server running...'))
