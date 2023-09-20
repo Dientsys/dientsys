@@ -5,20 +5,17 @@ require('dotenv').config() // Import dotenv: to use .env file
 // Create express instance
 const app = express()
 
+// Enable express to parse body
+app.use(express.json())
+
+// Listen on port 8000
+app.listen(process.env.PORT, () => console.log('Server running...'))
+
 // Connect to MongoDB
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.DATABASE_URL)
 const db = mongoose.connection
 db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('Connected to MongoDB'))
 
-
-// Enable express to parse body
-app.use(express.json())
-
 // Import routes
-const departmentsRouter = require('./routes/departments')
-app.use('/departments', departmentsRouter) // Use departmentsRouter for all routes starting with /departments
-
-
-// Listen on port 8000
-app.listen(process.env.PORT, () => console.log('Server running...'))
+app.use('/api/departments', require('./routes/departments')) // Use departmentsRouter for all routes starting with /departments
