@@ -8,7 +8,7 @@
 
 1. Typescript React
 2. Java Spring Boot
-3. SQl S3
+3. AWS S3
 
 ### Scope of Project
 
