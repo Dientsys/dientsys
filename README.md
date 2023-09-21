@@ -1,19 +1,15 @@
-# CRUD Employee Management Web App
+# Dientsys
 
-## Authors: Erik Sandoval & Alejandro Perez
+## Description
 
-### Technologies Used
+## Authors: Erik Sandoval, Alejandro Perez, Noah Wright.
 
-1. Node
-2. MongoDB
-3. Express
-4. dotenv
-5. Mongoose
-6. Docker
-7. HTML
-8. CSS
-9. JavaScript
+### Technologies Used:
+
+1. Typescript React
+2. Java Spring Boot
+3. SQl S3
 
 ### Scope of Project
 
-This project is a CRUD REST API web service for managing departments and their respective employees at a Dental Office.
+
