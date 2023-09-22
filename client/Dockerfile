@@ -4,12 +4,8 @@ RUN npm i -g pnpm
 
 WORKDIR /app
 
-COPY package.json pnpm-lock.yaml ./
+COPY package.json ./
 
 RUN pnpm install
 
-RUN pnpm add -D esbuild@0.18.20
-
 COPY . .
-
-# --platform=@esbuild/linux-arm64
