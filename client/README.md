@@ -54,3 +54,15 @@ function that leverages tailwind-merge and clsx to create dynamic classes and re
 - getError.ts
 
 takes a error as a parameter and returns the error message
+
+## Running Client on DOcker
+
+Currently, there is no volume for the client. There seems to be an issue with the local binary being perfered over the container's when a volume is defined. I will investigate the further in the near future.
+
+In the mean time you can build and run the image with docker-compose from the root directory with the following commands.
+
+```bash
+docker-compose build
+
+docker-compose up
+```

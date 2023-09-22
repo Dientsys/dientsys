@@ -1,0 +1,14 @@
+version: "0.1"
+services:
+  client:
+    container_name: dientsys-client
+    build:
+      context: ./client
+    ports:
+      - "3000:3000"
+    command: pnpm dev
+    # volumes:
+    #   - type: bind
+    #     source: ./client
+    #     target: /app
+    tty: true
