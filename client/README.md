@@ -55,7 +55,7 @@ function that leverages tailwind-merge and clsx to create dynamic classes and re
 
 takes a error as a parameter and returns the error message
 
-## Running Client on DOcker
+## Running Client on Docker
 
 Currently, there is no volume for the client. There seems to be an issue with the local binary being perfered over the container's when a volume is defined. I will investigate the further in the near future.
 
