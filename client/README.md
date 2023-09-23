@@ -54,3 +54,17 @@ function that leverages tailwind-merge and clsx to create dynamic classes and re
 - getError.ts
 
 takes a error as a parameter and returns the error message
+
+## Running Client on Docker
+
+1. Build image(s) - **you will only need to do this ONCE** (unless there are changed made to the dockerfile)
+
+```bash
+docker compose build
+```
+
+2. Run container(s)
+
+```bash
+docker compose up
+```
