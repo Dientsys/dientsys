@@ -1,10 +1,10 @@
-package com.dientsys.dientsys;
+package com.dientsys.middleware;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DientsysApplicationTests {
+class MiddlewareApplicationTests {
 
 	@Test
 	void contextLoads() {

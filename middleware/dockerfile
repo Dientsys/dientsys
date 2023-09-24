@@ -1,0 +1,39 @@
+## Dockerfile for building the middleware image.
+
+## Build the image.
+FROM adoptopenjdk/openjdk17:ubi as build
+
+## Set the working directory.
+WORKDIR /app
+
+## Copy the maven executable to the image.
+COPY mvnw .
+COPY .mvn .mvn
+
+## Copy the pom.xml file.
+COPY pom.xml .
+
+## Build all the dependencies in preparation to go offline.
+## This is a separate step so the dependencies will be cached.
+RUN ./mvnw dependency:go-offline -B
+
+## Copy the project source.
+COPY src src
+
+## Package the application.
+RUN ./mvnw package -DskipTests
+RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
+
+## Build the runtime image.
+FROM adoptopenjdk/openjdk17:ubi
+
+## Set dependency directory.
+ARG DEPENDENCY=/app/target/dependency
+
+## Copy project dependencies from the build stage.
+COPY --from=build ${DEPENDENCY}/BOOT-INF/lib /app/lib
+COPY --from=build ${DEPENDENCY}/META-INF /app/META-INF
+COPY --from=build ${DEPENDENCY}/BOOT-INF/classes /app
+
+## Set entrypoint.
+ENTRYPOINT ["java","-cp","app:app/lib/*","com.dientsys.middleware.MiddlewareApplication"]

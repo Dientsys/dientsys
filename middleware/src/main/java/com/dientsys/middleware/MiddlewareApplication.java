@@ -1,13 +1,13 @@
-package com.dientsys.dientsys;
+package com.dientsys.middleware;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DientsysApplication {
+public class MiddlewareApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DientsysApplication.class, args);
+		SpringApplication.run(MiddlewareApplication.class, args);
 	}
 
 }
