@@ -1,5 +1,15 @@
 version: "3"
 services:
+  middleware:
+    container_name: dientsys-middleware
+    build: ./middleware
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./middleware/src:/app/src
+      - ./middleware/public:/app/public
+    stdin_open: true
+    tty: true
   client:
     container_name: dientsys-client
     build: ./client

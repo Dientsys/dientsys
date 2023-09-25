@@ -6,10 +6,11 @@
 
 ### Technologies Used:
 
-1. Typescript React
-2. Java Spring Boot
-3. AWS S3
+1. React
+2. Spring Boot
+3. MongoDB
 
 ### Scope of Project
 
+Simple and robust dental software.
 
