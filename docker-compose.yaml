@@ -5,7 +5,6 @@ services:
     build: ./middleware
     ports:
       - "5000:5000"
-    command: pnpm dev
     volumes:
       - ./middleware/src:/app/src
       - ./middleware/public:/app/public
