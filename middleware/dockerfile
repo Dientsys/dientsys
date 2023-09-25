@@ -1,9 +1,9 @@
 ## Dockerfile for building the middleware image.
 
 ## Build the image.
-FROM adoptopenjdk/openjdk17:ubi as build
+FROM openjdk:17 as build
 
-## Set the working directory.
+## Set the working directory
 WORKDIR /app
 
 ## Copy the maven executable to the image.
@@ -25,7 +25,7 @@ RUN ./mvnw package -DskipTests
 RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
 ## Build the runtime image.
-FROM adoptopenjdk/openjdk17:ubi
+FROM openjdk:17
 
 ## Set dependency directory.
 ARG DEPENDENCY=/app/target/dependency
